@@ -25,13 +25,30 @@ const server = app.listen(3000, () => {//making this a const gives socket a thin
 
 io.attach(server); //this attaches socket to the server and lets it know that it has to listen for messages back and forth
 
+var users = {};
 
 io.on('connection', socket => {
 	console.log('a user has connected');
+
+
+	users[socket.id] = null;
 	io.emit('chat message', {for: 'everyone', message: `${socket.id} is here`});
 
 	socket.on('chat message', msg => {
-		io.emit('chat message', { for : 'everyone', message : msg});
+		if(users[socket.id]){
+			io.emit('chat message', { for : 'everyone', message : msg});			
+		}
+	});
+
+	socket.on('typing...', isTyping =>{
+		console.log(isTyping);
+		io.emit('typing...', {user:users[socket.id], isTyping:isTyping});
+	});
+
+	socket.on('new user', nickname =>{
+		users[socket.id] = nickname;
+		// console.log(isTyping);
+		// io.emit('typing...', {user:users[socket.id], isTyping:isTyping});
 	});
 
 	socket.on('disconnect',() => {

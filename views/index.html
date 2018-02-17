@@ -4,16 +4,54 @@
 	<meta charset="UTF-8">
 	<title>Socket IO Chat with Node!</title>
 	<link rel="stylesheet" href="css/main.css">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+<div class="chatRoom">
+<div class="topBar">
 	<input type="text" class="nickname" placeholder="What is your nickname?">
-	<ul id="messages"></ul>
+	<a onclick="closeNav()" class="closebtn">&times;</a>
+</div>
+
+	<div class="TextBox">
+		<ul id="messages"></ul>
+		<div class="typing"></div>
+	</div>
+
 	<form>
-		<input class="message" type="text" id="m" autocomplete="off">
-		<button>send</button>
+		<input class="message" type="text" id="m" autocomplete="off" placeholder="Type Here...">
+		<!-- <button>SEND</button> -->
 	</form>
+</div>
+
+<header class="topBar" >
+</header>
+
+<div class="mainBody">
+	<div class="middle">
+</div>
+</div>
+
+
+
+<div onclick="openNav()">
+	<div class="box"><h1>LIVE CHAT</h1></div>
+</div>
+
+
+<script>
+
+function openNav() {
+	document.querySelector(".chatRoom").style.height = "604px";
+};
+
+function closeNav(){
+document.querySelector(".chatRoom").style.height = "0px";
+};
+</script>
+
 <!-- pulls in library -->
+
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="js/main.js"></script>
 </body>
