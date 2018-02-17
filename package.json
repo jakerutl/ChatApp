@@ -11,7 +11,7 @@
     "url": "git+https://github.com/nmastracciFC/chatApp.git"
   },
   "keywords": [],
-  "author": "Natalie Mastracci",
+  "author": "Jake Rutledge",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nmastracciFC/chatApp/issues"
@@ -24,9 +24,11 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
+    "node-emoji": "^1.8.1",
     "sass": "^1.0.0-beta.4",
     "socket.io": "^2.0.4",
     "uglify": "^0.1.5",
+    "vanilla-emoji-picker": "^0.2.0",
     "watch": "^1.0.2"
   },
   "devDependencies": {
