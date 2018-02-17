@@ -203,7 +203,7 @@ label{
 		list-style-type: none;
 		float: right;
 		color: white;
-		margin-right: 500px;
+		margin-right: 20%;
 		margin-top: 23px;
 		li{
 			text-decoration: none;
@@ -221,6 +221,12 @@ label{
 			}
 		}
 	}
+}
+
+.title{
+	padding-top: 50px;
+	padding-left: 50px;
+	font-size: 24px;
 }
 
 .btn{

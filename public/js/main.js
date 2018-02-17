@@ -30,8 +30,8 @@
 		return false;
 	}
 	function handleNickname(){
-		let Thisv = this.value;
-		socket.emit('new user',Thisv);
+		let Thisvalue = this.value;
+		socket.emit('new user',Thisvalue);
 	}
 
 	function appendMessage(msg) {
