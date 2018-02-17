@@ -11,14 +11,6 @@ app.use(require('./routes/index'));
 app.use(require('./routes/contact'));
 
 
-// app.get('/', (req, res) =>{
-// 	res.sendFile(__dirname + '/index.html');
-// });//tells which file to serve. this will route the URL
-// app.get('/contact', (req, res) =>{
-// 	res.sendFile(__dirname + '/contact.html');
-// });
-
-
 const server = app.listen(3000, () => {//making this a const gives socket a thing to listen to
 	console.log('listening on Port 3000');
 });//where are we serving it.. this consoles out to the terminal and not the browser
@@ -36,7 +28,7 @@ io.on('connection', socket => {
 
 	socket.on('chat message', msg => {
 		if(users[socket.id]){
-			io.emit('chat message', { for : 'everyone', message : msg});			
+			io.emit('chat message', { for : 'everyone', message : msg});
 		}
 	});
 

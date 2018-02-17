@@ -198,6 +198,29 @@ label{
   height: 80px;
   overflow: hidden;
   background-color: #343a51;
+	ul{
+		text-decoration: none;
+		list-style-type: none;
+		float: right;
+		color: white;
+		margin-right: 500px;
+		margin-top: 23px;
+		li{
+			text-decoration: none;
+			display: inline;
+			list-style-type: none;
+			a{
+				text-decoration: none;
+				color: white;
+				font: 16px Helvetica, Arial;
+				padding-left:30px;
+				transition: 0.2s;
+				&:hover{
+					color:#858889;
+				}
+			}
+		}
+	}
 }
 
 .btn{
